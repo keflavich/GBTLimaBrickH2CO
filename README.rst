@@ -5,24 +5,36 @@ For proposals GBT12B-221 and GBT13A-532 (DD).
 
 The C-band observations were completed in August 2012 using LimaBeanMap_lon.py
 
+Observing Setup & Instructions
+------------------------------
+
+
+Important Links
+^^^^^^^^^^^^^^^
+ * `GBT Observers Guide <https://science.nrao.edu/facilities/gbt/observing/GBTog.pdf>`_
+ * `Remote Observing site <https://science.nrao.edu/facilities/gbt/observing/remote-observing-with-the-gbt>`_
+ * `GBT Schedule <https://dss.gb.nrao.edu/schedule/public>`_
+ * `GBT High-Frequency Weather <http://www.gb.nrao.edu/~rmaddale/Weather/AllOverviews.html>`_
+ * `GBT Remote Login (from CU's CASA:radio group) <http://code.google.com/p/casaradio/wiki/GBTRemoteLogin>`_
+
 Observing Scripts
 -----------------
-`LimaBeanOff.py` - Use for a simple single off position observation
+ * `LimaBeanOff.py` - Use for a simple single off position observation
 
 Ku-band scripts
 ###############
-`ConfigureFocusKu.py` - Run this first.  Sets up the observations and calibrates using `AutoPeakFocus`
-`Ku_LimaBeanMap_Lat.py` - Latitude map.  Should take ~1.5 hours
-`Ku_LimaBeanMap_Lon.py` - Longitude map.  Should take ~1.5 hours
+ * `ConfigureFocusKu.py` - Run this first.  Sets up the observations and calibrates using `AutoPeakFocus`
+ * `Ku_LimaBeanMap_Lat.py` - Latitude map.  Should take ~1.5 hours
+ * `Ku_LimaBeanMap_Lon.py` - Longitude map.  Should take ~1.5 hours
 
 
 C-band scripts
 ##############
 (these are complete, so can be ignored, but are included for completeness)
-`LimaBeanMap_Lat.py`
-`LimaBeanMap_Lat_nocal.py`
-`LimaBeanMap_Lon.py`
-`LimaBeanMap_Lon_nocal.py`
+ * `LimaBeanMap_Lat.py`
+ * `LimaBeanMap_Lat_nocal.py`
+ * `LimaBeanMap_Lon.py`
+ * `LimaBeanMap_Lon_nocal.py`
 
 
 Some information from the proposal
