@@ -18,8 +18,7 @@ Log in at least 30 minutes prior to observations
  5. Run the `ConfigureFocusKu.py` script
  6. Run the `LimaBeanOff.py` script
  7. Check the balance
- 8. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ 
-    or `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
+ 8. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
 Important Links
