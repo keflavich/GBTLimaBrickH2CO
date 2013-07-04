@@ -13,14 +13,16 @@ Log in at least 30 minutes prior to observations
  1. `ssh username@stargate.gb.nrao.edu`
  2. From stargate, `ssh titania`
  3. Start a VNC server: `vncserver -geometry 1440x860` (for example)
- 4. Start `cleo &`
- 5. Start `astrid &`
- 6. Load session `AGBT12B_221` *or* `GBT13A_532`
- 7. Once the obs-spec has given you permission, activate your astrid session
- 8. Run the `ConfigureFocusKu.py` script
- 9. Run the `LimaBeanOff.py` script
- 10. Check the balance
- 11. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
+ 4. SSH tunnel: `ssh -N -C -L 590n:HOSTNAME1.gbt.nrao.edu:590n USERNAME@HOSTNAME2.gb.nrao.edu`
+ 5. Start up the VNC client locally 
+ 6. Start `cleo &`
+ 7. Start `astrid &`
+ 8. Load session `AGBT12B_221` *or* `GBT13A_532`
+ 9. Once the obs-spec has given you permission, activate your astrid session
+ 10. Run the `ConfigureFocusKu.py` script
+ 11. Run the `LimaBeanOff.py` script
+ 12. Check the balance
+ 13. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
      `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
