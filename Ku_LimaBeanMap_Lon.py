@@ -15,7 +15,7 @@ https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Red
 Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
 
 cat = Catalog("/users/aginsbur/GBT12B-221/limabean.astrid")
-Configure("/users/aginsbur/GBT12B-221/H2CO_2cm_KuSetup_GC.py")
+Configure("/users/aginsbur/GBT12B-221/H2CO_2cm_KUSetup_GC.py")
 
 
 Slew("LimaBean")

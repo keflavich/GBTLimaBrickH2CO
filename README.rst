@@ -8,6 +8,11 @@ The C-band observations were completed in August 2012 using LimaBeanMap_lon.py
 Observing Setup & Instructions
 ------------------------------
 
+Log in at least 30 minutes prior to observations
+
+ 1. `ssh username@prospero.gb.nrao.edu`
+ 2. Start `cleo &`
+ 3. Start `astrid &`
 
 Important Links
 ^^^^^^^^^^^^^^^
