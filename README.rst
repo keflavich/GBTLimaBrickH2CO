@@ -11,6 +11,7 @@ Observing Setup & Instructions
 
 Important Links
 ^^^^^^^^^^^^^^^
+ * `Guidelines for Balancing <http://www.gb.nrao.edu/gbt/support/pdf/balancing-presentation.pdf>`_
  * `GBT Observers Guide <https://science.nrao.edu/facilities/gbt/observing/GBTog.pdf>`_
  * `Remote Observing site <https://science.nrao.edu/facilities/gbt/observing/remote-observing-with-the-gbt>`_
  * `GBT Schedule <https://dss.gb.nrao.edu/schedule/public>`_

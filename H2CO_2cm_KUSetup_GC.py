@@ -12,7 +12,7 @@ beam      = 'B12'                     # use two beams
 obstype   = 'Spectroscopy'
 backend   = 'Spectrometer'
 nwin      = 4                         # four spectral windows
-restfreq  = 14488.479,12.178597,13.778804, 13.16596 # H2CO, CH3OH, H213CO, H2C18O
+restfreq  = 14488.479,12178.597,13778.804,13165.96 # H2CO, CH3OH, H213CO, H2C18O
                                                     # max separation 2310 MHz
 deltafreq = 0,0,0,0                   # DO NOT MENTION IF3FREQ IN SETUP!
 #bandwidth = 12.5                      # MHz High-resolution mode (0.063 km/s)
