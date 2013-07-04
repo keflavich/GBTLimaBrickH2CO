@@ -3,17 +3,17 @@ Lima Bean / Brick / G0.253 GBT Mapping Observations Setup
 
 For proposals GBT12B-221 and GBT13A-532 (DD).
 
-The C-band observations were completed in August 2012 using LimaBeanMap_lon.py
 
 
-Observing Setup & Instructions
-------------------------------
+Observing Setup & Instructions for July 2013
+--------------------------------------------
 
 Log in at least 30 minutes prior to observations
 
  1. `ssh username@prospero.gb.nrao.edu`
  2. Start `cleo &`
  3. Start `astrid &`
+ 3. Load session `AGBT12B_221` *or* `GBT13A_532`
  4. Once the obs-spec has given you permission, activate your astrid session
  5. Run the `ConfigureFocusKu.py` script
  6. Run the `LimaBeanOff.py` script
