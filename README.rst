@@ -10,16 +10,18 @@ Observing Setup & Instructions for July 2013
 
 Log in at least 30 minutes prior to observations
 
- 1. `ssh username@prospero.gb.nrao.edu`
- 2. Start `cleo &`
- 3. Start `astrid &`
- 4. Load session `AGBT12B_221` *or* `GBT13A_532`
- 5. Once the obs-spec has given you permission, activate your astrid session
- 6. Run the `ConfigureFocusKu.py` script
- 7. Run the `LimaBeanOff.py` script
- 8. Check the balance
- 9. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
-    `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
+ 1. `ssh username@stargate.gb.nrao.edu`
+ 2. From stargate, `ssh titania`
+ 3. Start a VNC server: `vncserver -geometry 1440x860` (for example)
+ 4. Start `cleo &`
+ 5. Start `astrid &`
+ 6. Load session `AGBT12B_221` *or* `GBT13A_532`
+ 7. Once the obs-spec has given you permission, activate your astrid session
+ 8. Run the `ConfigureFocusKu.py` script
+ 9. Run the `LimaBeanOff.py` script
+ 10. Check the balance
+ 11. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
+     `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
 Important Links
