@@ -13,12 +13,13 @@ Log in at least 30 minutes prior to observations
  1. `ssh username@prospero.gb.nrao.edu`
  2. Start `cleo &`
  3. Start `astrid &`
- 3. Load session `AGBT12B_221` *or* `GBT13A_532`
- 4. Once the obs-spec has given you permission, activate your astrid session
- 5. Run the `ConfigureFocusKu.py` script
- 6. Run the `LimaBeanOff.py` script
- 7. Check the balance
- 8. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
+ 4. Load session `AGBT12B_221` *or* `GBT13A_532`
+ 5. Once the obs-spec has given you permission, activate your astrid session
+ 6. Run the `ConfigureFocusKu.py` script
+ 7. Run the `LimaBeanOff.py` script
+ 8. Check the balance
+ 9. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
+    `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
 Important Links
