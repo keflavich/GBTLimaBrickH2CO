@@ -18,7 +18,8 @@ Log in at least 30 minutes prior to observations
  5. Run the `ConfigureFocusKu.py` script
  6. Run the `LimaBeanOff.py` script
  7. Check the balance
- 8. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_lat.py>`_ or `Ku_LimaBeanMap_Lon.py`
+ 8. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat
+    <Ku_LimaBeanMap_Lat.py>`_ or `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
 Important Links
@@ -34,22 +35,22 @@ List of links:
 
 Observing Scripts
 -----------------
- * `LimaBeanOff.py` - Use for a simple single off position observation
+ * `LimaBeanOff <LimaBeanOff.py>`_ - Use for a simple single off position observation
 
 Ku-band scripts
 ~~~~~~~~~~~~~~~
- * `ConfigureFocusKu.py` - Run this first.  Sets up the observations and calibrates using `AutoPeakFocus`
- * `Ku_LimaBeanMap_Lat.py` - Latitude map.  Should take ~1.5 hours
- * `Ku_LimaBeanMap_Lon.py` - Longitude map.  Should take ~1.5 hours
+ * `ConfigureFocusKu <ConfigureFocusKu.py>`_ - Run this first.  Sets up the observations and calibrates using `AutoPeakFocus`
+ * `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ - Latitude map.  Should take ~1.5 hours
+ * `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_ - Longitude map.  Should take ~1.5 hours
 
 
 C-band scripts
 ~~~~~~~~~~~~~~
 (these are complete, so can be ignored, but are included for completeness)
- * `LimaBeanMap_Lat.py`
- * `LimaBeanMap_Lat_nocal.py`
- * `LimaBeanMap_Lon.py`
- * `LimaBeanMap_Lon_nocal.py`
+ * `LimaBeanMap_Lat <LimaBeanMap_Lat.py>`_
+ * `LimaBeanMap_Lat_nocal <LimaBeanMap_Lat_nocal.py>`_
+ * `LimaBeanMap_Lon <LimaBeanMap_Lon.py>`_
+ * `LimaBeanMap_Lon_nocal <LimaBeanMap_Lon_nocal.py>`_
 
 
 Some information from the proposal
