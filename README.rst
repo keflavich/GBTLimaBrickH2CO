@@ -16,7 +16,7 @@ Log in at least 30 minutes prior to observations
  3. Start `astrid &`
 
 Important Links
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 List of links:
 
  * `Guidelines for Balancing <http://www.gb.nrao.edu/gbt/support/pdf/balancing-presentation.pdf>`_
@@ -31,14 +31,14 @@ Observing Scripts
  * `LimaBeanOff.py` - Use for a simple single off position observation
 
 Ku-band scripts
-###############
+~~~~~~~~~~~~~~~
  * `ConfigureFocusKu.py` - Run this first.  Sets up the observations and calibrates using `AutoPeakFocus`
  * `Ku_LimaBeanMap_Lat.py` - Latitude map.  Should take ~1.5 hours
  * `Ku_LimaBeanMap_Lon.py` - Longitude map.  Should take ~1.5 hours
 
 
 C-band scripts
-##############
+~~~~~~~~~~~~~~
 (these are complete, so can be ignored, but are included for completeness)
  * `LimaBeanMap_Lat.py`
  * `LimaBeanMap_Lat_nocal.py`
