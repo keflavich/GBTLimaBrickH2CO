@@ -5,6 +5,7 @@ For proposals GBT12B-221 and GBT13A-532 (DD).
 
 The C-band observations were completed in August 2012 using LimaBeanMap_lon.py
 
+
 Observing Setup & Instructions
 ------------------------------
 
@@ -16,6 +17,8 @@ Log in at least 30 minutes prior to observations
 
 Important Links
 ^^^^^^^^^^^^^^^
+List of links:
+
  * `Guidelines for Balancing <http://www.gb.nrao.edu/gbt/support/pdf/balancing-presentation.pdf>`_
  * `GBT Observers Guide <https://science.nrao.edu/facilities/gbt/observing/GBTog.pdf>`_
  * `Remote Observing site <https://science.nrao.edu/facilities/gbt/observing/remote-observing-with-the-gbt>`_
