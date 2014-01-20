@@ -12,7 +12,7 @@ beam      = 'B12'                     # use two beams
 obstype   = 'Spectroscopy'
 backend   = 'Spectrometer'
 nwin      = 4                         # four spectral windows
-restfreq  = 28.9748,27.55567,26.33014,26.93916 # H2CO, H213CO, H2C18O, H62a; max separation 4000 MHz
+restfreq  = 28974.8,27555.67,26330.14,26939.16 # H2CO, H213CO, H2C18O, H62a; max separation 4000 MHz
 deltafreq = 0,0,0,0                   # DO NOT MENTION IF3FREQ IN SETUP!
 bandwidth = 50.0                      # MHz Moderate-resolution mode (0.25 km/s)
 swmode    = "tp"                      # set switching scheme (tp(total power with cal), tp_nocal, sp(switched power with cal), sp_nocal )
@@ -28,8 +28,8 @@ noisecal  = "lo"
 pol       = "Circular"
 nchan     = "high"                     # 4096 channels over 2 beams and 4 windows
         # spectrometer guide says 12.5 MHz = 237 km/s bandwidth = 8192 channels,
-        # 50 MHz = 1035 km/s BW
-        # 4096 channels, 12.2 KHz = 0.253 km/s
+        # 50 MHz = 535 km/s BW
+        # 4096 channels, 12.2 KHz = 0.12 km/s
         # numsamplers=8, nwin=4, chanwidth = 1.526 KHz -> resolution = .06 km/s (2 channels)... nchan = high
 spect.levels = 9                      # nine level sampling
 #iftarget = 0.25                       # IF target is now always 1
