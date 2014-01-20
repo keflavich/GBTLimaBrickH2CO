@@ -1,86 +1,16 @@
 import astropy.io.fits as pyfits
 import itertools
 import sys
-sys.path.append('/Users/adam/repos/casaradio/branches/python/ginsburg/')
-import makecube
+from gbtpy import makecube
 import numpy as np
 np.seterr(all='ignore')
 
-scanrange=[6,21]
-ref1 = 6
-ref2 = 21
-refscans = [6,21]#,22,32]
-sourcename = "LimaBean"
-obsmode = "DecLatMap"
-mapname = 'LimaBean'
-outpath = '/Users/adam/observations/gbt/%smap/' % mapname
-
-filename = '/Users/adam/observations/gbt/AGBT12B_221_01/AGBT12B_221_01.raw.acs.fits'
-filepyfits = pyfits.open(filename,memmap=True)
-datapfits = filepyfits[1].data
-dataarr = datapfits.DATA
-
-for sampler in ['A10', 'A13', 'A14', 'A9', 'B17', 'B18', 'B21', 'B22', 'C25', 'C26',
-        'C29', 'C30', 'D33', 'D34', 'D37', 'D38']:
-
-    if sampler in ('A9','A13'):
-        off_template,off_template_in = makecube.make_off(filename, scanrange=[6,21],
-                exclude_velo=[-120,103,158,193], interp_vrange=[-600,600],
-                interp_polyorder=10, sampler=sampler, return_uninterp=True, 
-                percentile=50)
-    if sampler in ('C25','C29'): # h2 13CO
-        off_template = makecube.make_off(filename, scanrange=scanrange,
-                exclude_velo=[-10,70], interp_vrange=[-100,150],
-                interp_polyorder=10, sampler=sampler)
-    if sampler in ('D33','D37'): # H110a
-        off_template = makecube.make_off(filename, scanrange=scanrange,
-                exclude_velo=[-50,150], interp_vrange=[-150,250],
-                interp_polyorder=10, sampler=sampler)
-    else:
-        off_template = None
-
-    makecube.calibrate_cube_data(filename,
-            outpath+'12B_221_%ito%i_%s_F1.fits' %
-            (ref1,ref2,sampler),scanrange=scanrange,refscan1=ref1,refscan2=ref2,
-            feednum=1, refscans=refscans, sampler=sampler, filepyfits=filepyfits,
-            datapfits=datapfits, tau=0, dataarr=dataarr, obsmode=obsmode,
-            sourcename=sourcename, off_template=off_template)
-
-obsmode = 'RALongMap'
-scanrange=[22,32]
-ref1 = 22
-ref2 = 32
-refscans = [22,32]#,22,32]
-for sampler in ['A10', 'A13', 'A14', 'A9', 'B17', 'B18', 'B21', 'B22', 'C25', 'C26',
-        'C29', 'C30', 'D33', 'D34', 'D37', 'D38']:
-
-    if sampler in ('A9','A13'):
-        off_template = makecube.make_off(filename, scanrange=scanrange,
-                exclude_velo=[-125,103,158,193], interp_vrange=[-600,600],
-                interp_polyorder=10, sampler=sampler)
-    if sampler in ('C25','C29'): # h2 13CO
-        off_template = makecube.make_off(filename, scanrange=scanrange,
-                exclude_velo=[-10,70], interp_vrange=[-100,150],
-                interp_polyorder=10, sampler=sampler)
-    if sampler in ('D33','D37'): # H110a
-        off_template = makecube.make_off(filename, scanrange=scanrange,
-                exclude_velo=[-20,80], interp_vrange=[-100,150],
-                interp_polyorder=10, sampler=sampler)
-    else:
-        off_template = None
-
-    makecube.calibrate_cube_data(filename,
-            outpath+'12B_221_%ito%i_%s_F1.fits' %
-            (ref1,ref2,sampler),scanrange=scanrange,refscan1=ref1,refscan2=ref2,
-            feednum=1, refscans=refscans, sampler=sampler, filepyfits=filepyfits,
-            datapfits=datapfits, tau=0, dataarr=dataarr, obsmode=obsmode,
-            sourcename=sourcename, off_template=off_template)
-
-
 cubename='LimaBean_H2CO11_cube'
 # 15' x 12 ' 
-makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
-        naxis3=2400, cd3=1.0, clobber=True, restfreq=4.8296594e9)
+#makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
+#        naxis3=2400, cd3=1.0, clobber=True, restfreq=4.8296594e9)
+makecube.generate_header(0.256, 0.0220, naxis1=100, naxis2=100, pixsize=15,
+        naxis3=800, cd3=1.0, clobber=True, restfreq=4.8296594e9)
 makecube.make_blank_images(cubename,clobber=True)
 
 files = ['/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A13_F1.fits',
@@ -92,7 +22,9 @@ files = ['/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A13_F1.fits',
 for fn in files:
     makecube.add_file_to_cube(fn,
         cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
-        velocityrange=[-1200,1200],excludefitrange=[-225,250],
+        add_with_kernel=True,
+        kernel_fwhm=75./3600.,
+        velocityrange=[-400,400],excludefitrange=[-225,250],
         smoothto=2)
 
 import os
@@ -134,8 +66,10 @@ for cubename,restfreq,samplers in (
             ):
 
 
-    makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
-            naxis3=2400, cd3=1.0, clobber=True, restfreq=restfreq)
+    #makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
+    #        naxis3=2400, cd3=1.0, clobber=True, restfreq=restfreq)
+    makecube.generate_header(0.256, 0.0220, naxis1=100, naxis2=100, pixsize=15,
+            naxis3=800, cd3=1.0, clobber=True, restfreq=restfreq)
     makecube.make_blank_images(cubename,clobber=True)
 
     files = [
@@ -146,7 +80,9 @@ for cubename,restfreq,samplers in (
     for fn in files:
         makecube.add_file_to_cube(fn,
             cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
-            velocityrange=[-1200,1200],excludefitrange=[-150,225])
+            add_with_kernel=True,
+            kernel_fwhm=75./3600.,
+            velocityrange=[-400,400],excludefitrange=[-150,225])
 
     os.system('chmod +x %s_starlink.sh' % cubename)
     os.system('./%s_starlink.sh' % cubename)
