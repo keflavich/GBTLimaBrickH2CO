@@ -23,7 +23,7 @@ Lines from Splatalogue:
  * Resonances are at:
  * Ku 12875.0 8.1
  * Ku 12885.0 7.1
- * BAD FREQUENCIES below 12.35 GHz - DO NOT observer
+ * BAD FREQUENCIES below 12.35 GHz - DO NOT observe [note to self: should take this advice when including CH3OH...]
 
 :: 
 
