@@ -16,8 +16,10 @@ files = ['/Users/adam/observations/gbt/LimaBeanmap/14A_110_9to54_A13_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_9to54_A9_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_9to54_C25_F2.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_9to54_C29_F2.fits',
-         #'/Users/adam/observations/gbt/LimaBeanmap/14A_110_22to32_A13_F1.fits',
-         #'/Users/adam/observations/gbt/LimaBeanmap/14A_110_22to32_A9_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_A13_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_A9_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_C25_F2.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_C29_F2.fits',
          ]
 
 for fn in files:

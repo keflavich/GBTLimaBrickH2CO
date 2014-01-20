@@ -15,8 +15,8 @@ makecube.make_blank_images(cubename,clobber=True)
 
 files = ['/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A13_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A9_F1.fits',
-         #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A13_F1.fits',
-         #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A9_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A13_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A9_F1.fits',
          ]
 
 for fn in files:
@@ -74,9 +74,9 @@ for cubename,restfreq,samplers in (
 
     files = [
              '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_%s_F1.fits' % samplers[0],
-             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_%s_F1.fits' % samplers[1],]
-             #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[0],
-             #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[1],
+             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_%s_F1.fits' % samplers[1],
+             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[0],
+             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[1],]
     for fn in files:
         makecube.add_file_to_cube(fn,
             cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
