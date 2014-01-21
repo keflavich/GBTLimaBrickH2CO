@@ -6,13 +6,14 @@ import numpy as np
 np.seterr(all='ignore')
 
 cubename='LimaBean_H2CO11_cube'
-cubename_discrete='LimaBean_H2CO11_cube_discrete'
+#cubename_discrete='LimaBean_H2CO11_cube_discrete'
 # 15' x 12 ' 
 #makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
 #        naxis3=2400, cd3=1.0, clobber=True, restfreq=4.8296594e9)
 makecube.generate_header(0.256, 0.0220, naxis1=100, naxis2=100, pixsize=15,
         naxis3=800, cd3=1.0, clobber=True, restfreq=4.8296594e9)
 makecube.make_blank_images(cubename,clobber=True)
+#makecube.make_blank_images(cubename_discrete,clobber=True)
 
 files = ['/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A13_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A9_F1.fits',
@@ -27,13 +28,13 @@ for fn in files:
         kernel_fwhm=90./3600.,
         velocityrange=[-400,400],excludefitrange=[-225,250],
         smoothto=2)
-    makecube.add_file_to_cube(fn,
-        cubename_discrete+'.fits',
-        nhits=cubename_discrete+'_nhits.fits',wcstype='V',
-        add_with_kernel=False,
-        velocityrange=[-400,400],
-        excludefitrange=[-225,250],
-        smoothto=2)
+    #makecube.add_file_to_cube(fn,
+    #    cubename_discrete+'.fits',
+    #    nhits=cubename_discrete+'_nhits.fits',wcstype='V',
+    #    add_with_kernel=False,
+    #    velocityrange=[-400,400],
+    #    excludefitrange=[-225,250],
+    #    smoothto=2)
 
 import os
 os.system('./LimaBean_H2CO11_cube_starlink.sh')

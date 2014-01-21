@@ -17,12 +17,13 @@ Log in at least 30 minutes prior to observations
  5. Start up the VNC client locally 
  6. Start `cleo &`
  7. Start `astrid &`
- 8. Load session `AGBT12B_221` *or* `GBT13A_532`
- 9. Once the obs-spec has given you permission, activate your astrid session
- 10. Run the `ConfigureFocusKu.py` script
- 11. Run the `LimaBeanOff.py` script
- 12. Check the balance
- 13. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
+ 8. Load session `AGBT12B_221` *or* `AGBT13A_532` *or* `AGBT14A_110`
+ 9. Enter your name and the obs-spec's name in the queue tab
+ 10. Once the obs-spec has given you permission, activate your astrid session
+ 11. Run the `ConfigureFocusKu.py` script
+ 12. Run the `LimaBeanOff.py` script
+ 13. Check the balance
+ 14. Run one of the mapping scripts, either `Ku_LimaBeanMap_Lat <Ku_LimaBeanMap_Lat.py>`_ or
      `Ku_LimaBeanMap_Lon <Ku_LimaBeanMap_Lon.py>`_
 
 
