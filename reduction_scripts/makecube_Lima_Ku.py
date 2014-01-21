@@ -20,6 +20,10 @@ files = ['/Users/adam/observations/gbt/LimaBeanmap/14A_110_9to54_A13_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_A9_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_C25_F2.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/14A_110_62to98_C29_F2.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_108to140_A13_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_108to140_A9_F1.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_108to140_C25_F2.fits',
+         '/Users/adam/observations/gbt/LimaBeanmap/14A_110_108to140_C29_F2.fits',
          ]
 
 for fn in files:
@@ -69,7 +73,7 @@ for cubename,restfreq,samplers in (
             naxis3=800, cd3=1.0, clobber=True, restfreq=restfreq)
     makecube.make_blank_images(cubename,clobber=True)
 
-    files = [x for scan1,scan2 in ([9,54],[62,98]) for x in
+    files = [x for scan1,scan2 in ([9,54],[62,98],[108,140]) for x in
              ['/Users/adam/observations/gbt/LimaBeanmap/14A_110_%ito%i_%s_F%i.fits' % (scan1,scan2,samplers[ii],sampler_feeds[samplers[ii]])
               for ii in xrange(len(samplers))]]
     for fn in files:
@@ -83,3 +87,18 @@ for cubename,restfreq,samplers in (
     os.system('./%s_starlink.sh' % cubename)
     makecube.make_flats(cubename,vrange=[-20,60],noisevrange=[250,300])
 
+
+#import FITS_tools
+#import FITS_tools.cube_regrid
+from astropy.io import fits
+from agpy.cubes import smooth_cube
+
+for cubename in ('LimaBean_H2CO22_cube', 'LimaBean_H213CO22_cube', 'LimaBean_H2C18O22_cube'):
+
+    cube = fits.open(cubename+"_sub.fits")
+    # kernel = ((2.5*60)**2 -  50.**2)**0.5 / sqrt(8*log(2)) = 60 arcsec
+    # 60 arcsec / 15 "/pixel = 4
+    #cubesm = FITS_tools.cube_regrid.gsmooth_cube(cube[0].data, [0.0001,4,4])
+    cubesm = smooth_cube(cube[0].data, kernelwidth=4, interpolate_nan=True)
+    cube[0].data = cubesm
+    cube.writeto(cubename+"_sub_smoothtoCband.fits",clobber=True)

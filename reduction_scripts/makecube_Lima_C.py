@@ -6,6 +6,7 @@ import numpy as np
 np.seterr(all='ignore')
 
 cubename='LimaBean_H2CO11_cube'
+cubename_discrete='LimaBean_H2CO11_cube_discrete'
 # 15' x 12 ' 
 #makecube.generate_header(0.256, 0.0220, naxis1=24, naxis2=24, pixsize=60,
 #        naxis3=2400, cd3=1.0, clobber=True, restfreq=4.8296594e9)
@@ -23,8 +24,15 @@ for fn in files:
     makecube.add_file_to_cube(fn,
         cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
         add_with_kernel=True,
-        kernel_fwhm=75./3600.,
+        kernel_fwhm=90./3600.,
         velocityrange=[-400,400],excludefitrange=[-225,250],
+        smoothto=2)
+    makecube.add_file_to_cube(fn,
+        cubename_discrete+'.fits',
+        nhits=cubename_discrete+'_nhits.fits',wcstype='V',
+        add_with_kernel=False,
+        velocityrange=[-400,400],
+        excludefitrange=[-225,250],
         smoothto=2)
 
 import os
@@ -81,7 +89,7 @@ for cubename,restfreq,samplers in (
         makecube.add_file_to_cube(fn,
             cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
             add_with_kernel=True,
-            kernel_fwhm=75./3600.,
+            kernel_fwhm=90./3600.,
             velocityrange=[-400,400],excludefitrange=[-150,225])
 
     os.system('chmod +x %s_starlink.sh' % cubename)
