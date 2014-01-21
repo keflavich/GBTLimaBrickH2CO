@@ -102,3 +102,7 @@ for cubename in ('LimaBean_H2CO22_cube', 'LimaBean_H213CO22_cube', 'LimaBean_H2C
     cubesm = smooth_cube(cube[0].data, kernelwidth=4, interpolate_nan=True)
     cube[0].data = cubesm
     cube.writeto(cubename+"_sub_smoothtoCband.fits",clobber=True)
+
+    makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.886)
+    makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.886, suffix="_sub_smoothtoCband.fits")
+

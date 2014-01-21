@@ -17,8 +17,9 @@ makecube.make_blank_images(cubename,clobber=True)
 
 files = ['/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A13_F1.fits',
          '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_A9_F1.fits',
-         '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A13_F1.fits',
-         '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A9_F1.fits',
+         # there was one noisy scan, so the whole damned thing gets commented out
+         #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A13_F1.fits',
+         #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_A9_F1.fits',
          ]
 
 for fn in files:
@@ -40,6 +41,7 @@ import os
 os.system('./LimaBean_H2CO11_cube_starlink.sh')
 
 makecube.make_flats(cubename,vrange=[-20,60],noisevrange=[250,300])
+makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.98)
 
 
 # SAMPLERS:
@@ -84,8 +86,10 @@ for cubename,restfreq,samplers in (
     files = [
              '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_%s_F1.fits' % samplers[0],
              '/Users/adam/observations/gbt/LimaBeanmap/12B_221_6to21_%s_F1.fits' % samplers[1],
-             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[0],
-             '/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[1],]
+             # there was one noisy scan, so the whole damned thing gets commented out
+             #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[0],
+             #'/Users/adam/observations/gbt/LimaBeanmap/12B_221_22to32_%s_F1.fits' % samplers[1],]
+            ]
     for fn in files:
         makecube.add_file_to_cube(fn,
             cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
@@ -96,6 +100,7 @@ for cubename,restfreq,samplers in (
     os.system('chmod +x %s_starlink.sh' % cubename)
     os.system('./%s_starlink.sh' % cubename)
     makecube.make_flats(cubename,vrange=[-20,60],noisevrange=[250,300])
+    makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.98)
 
 
 
