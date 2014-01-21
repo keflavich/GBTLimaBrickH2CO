@@ -100,7 +100,8 @@ for cubename,restfreq,samplers in (
     os.system('chmod +x %s_starlink.sh' % cubename)
     os.system('./%s_starlink.sh' % cubename)
     makecube.make_flats(cubename,vrange=[-20,60],noisevrange=[250,300])
-    makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.98)
+    if 'CO' in cubename:
+        makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.98)
 
 
 
