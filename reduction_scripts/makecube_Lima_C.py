@@ -28,6 +28,7 @@ for fn in files:
         add_with_kernel=True,
         kernel_fwhm=90./3600.,
         velocityrange=[-400,400],excludefitrange=[-225,250],
+        diagnostic_plot_name=fn.replace('.fits','_data_scrubbed.png'),
         smoothto=2)
     #makecube.add_file_to_cube(fn,
     #    cubename_discrete+'.fits',
@@ -95,6 +96,7 @@ for cubename,restfreq,samplers in (
             cubename+'.fits',nhits=cubename+'_nhits.fits',wcstype='V',
             add_with_kernel=True,
             kernel_fwhm=90./3600.,
+            diagnostic_plot_name=fn.replace('.fits','_data_scrubbed.png'),
             velocityrange=[-400,400],excludefitrange=[-150,225])
 
     os.system('chmod +x %s_starlink.sh' % cubename)
