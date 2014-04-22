@@ -1,7 +1,7 @@
 """
-Create a 10x15' map of the Lima Bean at Ka band
+Create a 8x8' map of the Lima Bean at Ka band
 
-*This observation will take 1.92 hours on-source, *PLUS* overheads, so about 2.2 hours*
+*This observation will take 42 minutes on-source, *PLUS* overheads, so about 1 hour*
 
 Per Glen Langston's recommendations, I should:
     1. not use refs for each scan (because the pipeline doesn't use them)
@@ -33,6 +33,10 @@ scanwidth = 8 # arcmin
 hdelta = 10.0 * arcsectodeg
 # nscans = 6 * 12 = 72
 
+# total time:
+    # 8' / (1/6 arcmin offset) = 48 scans
+    # each scan: 8' / 9 arcmin/mina = 0.88 min, or 53.3333 sec
+    # Total: 42' without overheads
 # vertical scans
 DecLatMap('LimaBean',     #center of map
     hLength = Offset("Galactic",scanwidth*amintodeg,0.0,cosv=True),
@@ -40,5 +44,3 @@ DecLatMap('LimaBean',     #center of map
     hDelta  = Offset("Galactic",hdelta,0.0,cosv=True),
     scanDuration = scanheight/scanrate * 60,
     beamName="1")
-
-
