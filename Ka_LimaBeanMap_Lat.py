@@ -41,4 +41,3 @@ DecLatMap('LimaBean',     #center of map
     hDelta  = Offset("Galactic",(1./6.)*amintodeg,0.0,cosv=True),
     scanDuration = scanheight/scanrate * 60,
     beamName="1")
-

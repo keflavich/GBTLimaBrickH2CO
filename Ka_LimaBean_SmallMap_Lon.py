@@ -20,6 +20,8 @@ Configure("/users/aginsbur/GBT12B-221/H2CO_1cm_KaSetup_GC.py")
 
 Slew("LimaBean")
 Balance()
+Slew("LimaBeanOff")
+Track("LimaBeanOff",None,60)
 
 amintodeg = 1/60.
 # samplerate = 30/minute = 0.5/s
@@ -39,3 +41,6 @@ RALongMap('LimaBean',     #center of map
     hDelta  = Offset("Galactic",hdelta,0.0,cosv=True),
     scanDuration = scanwidth/scanrate * 60,
     beamName="1")
+
+Slew("LimaBeanOff")
+Track("LimaBeanOff",None,60)
