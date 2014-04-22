@@ -12,7 +12,7 @@ Following pipeline recommendations:
 https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Reduction_Execute_Pipeline_with
 """
 
-Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
+Break("Make sure you run ConfigureFocusKa.py before beginning this observation")
 
 cat = Catalog("/users/aginsbur/GBT12B-221/limabean.astrid")
 Configure("/users/aginsbur/GBT12B-221/H2CO_1cm_KaSetup_GC.py")
@@ -22,14 +22,19 @@ Slew("LimaBean")
 Balance()
 
 amintodeg = 1/60.
+# samplerate = 30/minute = 0.5/s
+# beam ~ 25"
+# 4 samples/beam
+# 8 seconds / arcminute
 scanrate = 7.5 # arcmin/min = arcsec/sec
+scanheight = 12 # arcmin
+scanwidth = 15 # arcmin
+# nscans = 6 * 15 = 90
 
 # horizontal scans
 RALongMap('LimaBean',     #center of map
-    hLength = Offset("Galactic",15*amintodeg,0.0,cosv=True), 
-    vLength = Offset("Galactic",0.0,12*amintodeg,cosv=True), 
-    vDelta  = Offset("Galactic",0.0,(1./6.)*amintodeg,cosv=True),  # 10" = 1/6 of an arcminute
-    scanDuration = 15/scanrate * 60,
+    hLength = Offset("Galactic",scanwidth*amintodeg,0.0,cosv=True), 
+    vLength = Offset("Galactic",0.0,scanheight*amintodeg,cosv=True), 
+    hDelta  = Offset("Galactic",(1./6.)*amintodeg,0.0,cosv=True), 
+    scanDuration = scanwidth/scanrate * 60,
     beamName="1")
-
-
