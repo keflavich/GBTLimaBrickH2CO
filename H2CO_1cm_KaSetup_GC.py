@@ -12,9 +12,14 @@ beam      = 'B1'                      # use two beams: NO! Memo 255 says only B1
 # https://safe.nrao.edu/wiki/pub/GB/Knowledge/GBTMemos/GBT_Memo_255.pdf
 obstype   = 'Spectroscopy'
 backend   = 'Spectrometer'
-nwin      = 4                         # four spectral windows
-restfreq  = 28974.8,27555.67,26330.14,26939.16 # H2CO, H213CO, H2C18O, H62a; max separation 4000 MHz
-deltafreq = 0,0,0,0                   # DO NOT MENTION IF3FREQ IN SETUP!
+nwin      = 4                         # eight spectral windows (b/c 1 pol)
+# H2CO, H213CO, H2C18O, H62a; max separation 4000 MHz
+# HCOOH (Formic acid), SO, ccs, HC3N
+# CCS 2-1: 29.4777
+# HCCN: 28.65117 through 28.75931	
+# CCCS 5-4: 28.90369	
+restfreq  = 28974.8,27555.67,26330.14,26939.16#,28.08636,30.00154,29.4777,27.29429
+deltafreq = 0,0,0,0#,0,0,0,0           # DO NOT MENTION IF3FREQ IN SETUP!
 bandwidth = 50.0                      # MHz Moderate-resolution mode (0.25 km/s)
 swmode    = "tp"                      # set switching scheme (tp(total power with cal), tp_nocal, sp(switched power with cal), sp_nocal )
 swtype    = "none"                    # for frequency switching; not used for tp mode
