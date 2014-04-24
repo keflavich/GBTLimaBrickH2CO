@@ -29,9 +29,9 @@ amintodeg = 1/60.
 # or: 27" beam, 2.5 samples per peam, 1.2 s per sample:
 # 27/2.5/1.2 = 9
 # -> 10.8"/sample
-scanrate = 9 # arcmin/min
-scanheight = 12 # arcmin
-scanwidth = 15 # arcmin
+scanrate = 9. # arcmin/min
+scanheight = 12. # arcmin
+scanwidth = 15. # arcmin
 # nscans = 6 * 12 = 72
 
 # vertical scans

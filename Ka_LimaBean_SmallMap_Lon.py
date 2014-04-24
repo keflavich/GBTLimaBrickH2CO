@@ -24,21 +24,22 @@ Slew("LimaBeanOff")
 Track("LimaBeanOff",None,60)
 
 amintodeg = 1/60.
+arcsectodeg = 1/3600.
 # samplerate = 30/minute = 0.5/s
 # beam ~ 25"
 # 4 samples/beam
 # 8 seconds / arcminute
-scanrate = 9 # arcmin/min
-scanheight = 8 # arcmin
-scanwidth = 8 # arcmin
-hdelta = 10.0 * arcsectodeg
+scanrate = 9. # arcmin/min
+scanheight = 8. # arcmin
+scanwidth = 8. # arcmin
+vdelta = 10.0 * arcsectodeg
 # nscans = 6 * 15 = 90
 
 # horizontal scans
 RALongMap('LimaBean',     #center of map
     hLength = Offset("Galactic",scanwidth*amintodeg,0.0,cosv=True),
     vLength = Offset("Galactic",0.0,scanheight*amintodeg,cosv=True),
-    hDelta  = Offset("Galactic",hdelta,0.0,cosv=True),
+    vDelta  = Offset("Galactic",0.0,vdelta,cosv=True),
     scanDuration = scanwidth/scanrate * 60,
     beamName="1")
 

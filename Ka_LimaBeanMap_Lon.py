@@ -27,14 +27,14 @@ amintodeg = 1/60.
 # 4 samples/beam
 # 8 seconds / arcminute
 scanrate = 7.5 # arcmin/min = arcsec/sec
-scanheight = 12 # arcmin
-scanwidth = 15 # arcmin
+scanheight = 12. # arcmin
+scanwidth = 15. # arcmin
 # nscans = 6 * 15 = 90
 
 # horizontal scans
 RALongMap('LimaBean',     #center of map
     hLength = Offset("Galactic",scanwidth*amintodeg,0.0,cosv=True), 
     vLength = Offset("Galactic",0.0,scanheight*amintodeg,cosv=True), 
-    hDelta  = Offset("Galactic",(1./6.)*amintodeg,0.0,cosv=True), 
+    vDelta  = Offset("Galactic",0.0,(1./6.)*amintodeg,cosv=True), 
     scanDuration = scanwidth/scanrate * 60,
     beamName="1")

@@ -7,8 +7,9 @@
 # BW Pol Lev  Windows Beams Channels / resolution
 # 50 No  9    4       2     4096 - 12.2070 kHz 4096 - 12.2070 kHz 4096 - 12.2070 kHz
 
-receiver  = 'Rcvr26_40'               # select Ka-band receiver [Is it Rcvr26_40 or Rcvr_26_40
-beam      = 'B12'                     # use two beams
+receiver  = 'Rcvr26_40'               # select Ka-band receiver
+beam      = 'B1'                      # use two beams: NO! Memo 255 says only B1
+# https://safe.nrao.edu/wiki/pub/GB/Knowledge/GBTMemos/GBT_Memo_255.pdf
 obstype   = 'Spectroscopy'
 backend   = 'Spectrometer'
 nwin      = 4                         # four spectral windows

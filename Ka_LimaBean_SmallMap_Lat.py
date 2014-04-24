@@ -30,9 +30,9 @@ arcsectodeg = 1/3600.
 # beam ~ 25"
 # 4 samples/beam
 # 8 seconds / arcminute
-scanrate = 9 # arcmin/min
-scanheight = 8 # arcmin
-scanwidth = 8 # arcmin
+scanrate = 9. # arcmin/min
+scanheight = 8. # arcmin
+scanwidth = 8. # arcmin
 hdelta = 10.0 * arcsectodeg
 # nscans = 6 * 12 = 72
 
