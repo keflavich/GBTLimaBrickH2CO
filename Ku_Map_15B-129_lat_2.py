@@ -17,7 +17,7 @@ Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
 cat = Catalog("/users/aginsbur/GBT15B-129/gc_15B-129.astrid")
 Configure("/users/aginsbur/GBT15B-129/H2CO_2cm_KUSetup_GC_15B-129.py")
 
-Slew("CMZ_East_left")
+Slew("CMZ_East_right")
 Balance()
 
 amintodeg = 1/60.
@@ -27,11 +27,11 @@ mintosec = 60.
 # vertical scans
 height = 12.
 width = 15.
-DecLatMapWithReference(location='CMZ_East_left',     #center of map
+DecLatMapWithReference(location='CMZ_East_right',     #center of map
                        hLength = Offset("Galactic",width*amintodeg,0.0,cosv=True), 
                        vLength = Offset("Galactic",0.0,height*amintodeg,cosv=True), 
                        hDelta  = Offset("Galactic",(1./3.)*amintodeg,0.0,cosv=True), 
-                       scanDuration = height/(scanrate * mintosec),
+                       scanDuration = (height/scanrate) * mintosec,
                        beamName="1",
                        # 1 degree vertical offset
                        referenceOffset=Offset("Galactic", 0.0, 1.0, cosv=True),

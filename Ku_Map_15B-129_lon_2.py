@@ -30,8 +30,8 @@ width = 15.
 RALongMapWithReference(location='CMZ_East_right',     #center of map
                        hLength = Offset("Galactic",width*amintodeg,0.0,cosv=True), 
                        vLength = Offset("Galactic",0.0,height*amintodeg,cosv=True), 
-                       hDelta  = Offset("Galactic",(1./3.)*amintodeg,0.0,cosv=True), 
-                       scanDuration = width/(scanrate * mintosec),
+                       vDelta  = Offset("Galactic",0.0,(1./3.)*amintodeg,cosv=True), 
+                       scanDuration = (width/scanrate) * mintosec,
                        beamName="1",
                        # 1 degree vertical offset
                        referenceOffset=Offset("Galactic", 0.0, 1.0, cosv=True),
