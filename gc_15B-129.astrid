@@ -1,0 +1,7 @@
+format=spherical
+coordmode=J2000
+veldef=vrad-lsr
+HEAD = NAME RA DEC VEL 
+CMZ_East        17:46:49.444 -28:33:02.56
+CMZ_East_left   17:47:07.271 -28:26:34.61
+CMZ_East_right  17:46:31.865 -28:39:24.21
