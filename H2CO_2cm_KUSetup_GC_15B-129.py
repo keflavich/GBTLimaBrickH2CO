@@ -36,7 +36,7 @@ restfreq  = [
 {"restfreq": 13.7670 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
 {"restfreq": 14.13000 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
 {"restfreq": 12.17856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 13.16596 , 'bandwidth': 23.44, "res":5.7, "delatfreq": 0},
+{"restfreq": 13.16596 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
 ]
 """
 
