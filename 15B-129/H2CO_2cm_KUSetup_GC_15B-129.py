@@ -23,18 +23,28 @@ vframe    = "lsrk"                    # LSR - kinematic is the "normal" definiti
 vdef      = "Radio"                   # radio (optical is also acceptable, but not the norm for Galactic observations)
 noisecal  = "lo"
 pol       = "Circular"
-nchan     = "high"
+nchan     = "low"
 #iftarget = 0.25                       # IF target is now always 1
 vegas.vpol='self'
 restfreq  = [ 
-{"restfreq": 14.488479, 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 14.511   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 14.465   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 13.7880 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 13.7670 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 14.13000 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 12.17856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
-{"restfreq": 13.16596 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0},
+{"restfreq": 14.488479, 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #1 H2CO
+{"restfreq": 14.511   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #2 H2CO
+{"restfreq": 14.465   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #3 H2CO
+{"restfreq": 13.7880 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #4 H213CO
+{"restfreq": 13.7670 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #5 H213CO
+{"restfreq": 14.13000 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #6 H77a
+{"restfreq": 13.59549 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #7 H78a
+{"restfreq": 14.68999 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #8 H76a
+# spw 2
+{"restfreq": 13.16596 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #1 H2C18O
+{"restfreq": 12.511   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #2 CH3OH
+{"restfreq": 12.14866 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #3 H81a
+{"restfreq": 12.16856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #4 CH3OH lo
+#{"restfreq": 12.17856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, # center of CH3OH
+{"restfreq": 12.18856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #5 CH3OH hi
+{"restfreq": 12.60708 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #6 H80a
+{"restfreq": 13.08885 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #7 H79a
+{"restfreq": 13.04381 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #8 SO
 ]
 
 #Configure(myconfig)
