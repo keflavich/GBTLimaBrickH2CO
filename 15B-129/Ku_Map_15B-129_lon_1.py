@@ -12,7 +12,7 @@ Following pipeline recommendations:
 https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Reduction_Execute_Pipeline_with
 """
 
-Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
+#Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
 
 cat = Catalog("/users/aginsbur/GBT15B-129/gc_15B-129.astrid")
 Configure("/users/aginsbur/GBT15B-129/H2CO_2cm_KUSetup_GC_15B-129.py")
@@ -24,14 +24,14 @@ amintodeg = 1/60.
 scanrate = 20. # arcmin/min
 mintosec = 60.
 
-# vertical scans
+# horizontal scans
 height = 12.
 width = 15.
 RALongMapWithReference(location='CMZ_East_left',     #center of map
                        hLength = Offset("Galactic",width*amintodeg,0.0,cosv=True), 
                        vLength = Offset("Galactic",0.0,height*amintodeg,cosv=True), 
                        vDelta  = Offset("Galactic",0.0,(1./3.)*amintodeg,cosv=True), 
-                       scanDuration = (height/scanrate) * mintosec,
+                       scanDuration = (width/scanrate) * mintosec,
                        beamName="1",
                        # 1 degree vertical offset
                        referenceOffset=Offset("Galactic", 0.0, 1.0, cosv=True),

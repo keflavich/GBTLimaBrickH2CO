@@ -11,7 +11,7 @@ receiver  = 'Rcvr12_18'               # select Ku-band receiver
 beam      = 'B12'                     # use two beams
 obstype   = 'Spectroscopy'
 backend   = 'VEGAS'
-dopplertrackfreq = 14.488479
+dopplertrackfreq = 14488.479
 swmode    = "tp"                      # set switching scheme
 swtype    = "none"                    # for frequency switching
 swper     = 1.0                       # one second cycle for switching
@@ -27,28 +27,28 @@ nchan     = "low" # 'low' uses mode 20, with 0.11 km/s channels
 #iftarget = 0.25                       # IF target is now always 1
 vegas.vpol='self'
 restfreq  = [ 
-{"nchan":"low", "restfreq": 14.488479, 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #1 H2CO
-{"nchan":"low", "restfreq": 14.511   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #2 H2CO
-{"nchan":"low", "restfreq": 14.465   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #3 H2CO
-{"nchan":"low", "restfreq": 13.7880 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #4 H213CO
-{"nchan":"low", "restfreq": 13.7670 ,  'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #5 H213CO
-{"nchan":"low", "restfreq": 14.13000 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #6 H77a
-{"nchan":"low", "restfreq": 13.59549 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #7 H78a
-{"nchan":"low", "restfreq": 14.68999 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #8 H76a
+{"nchan":"low", "restfreq": 14488.479, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #1 H2CO
+{"nchan":"low", "restfreq": 14511.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #2 H2CO
+{"nchan":"low", "restfreq": 14465.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #3 H2CO
+{"nchan":"low", "restfreq": 13788.0 ,  'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #4 H213CO
+{"nchan":"low", "restfreq": 13767.0 ,  'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #5 H213CO
+{"nchan":"low", "restfreq": 14130.00 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #6 H77a
+{"nchan":"low", "restfreq": 13595.49 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #7 H78a
+{"nchan":"low", "restfreq": 14689.99 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #8 H76a
 # spw 2
-{"nchan":"low", "restfreq": 13.16596 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #1 H2C18O
-{"nchan":"low", "restfreq": 12.511   , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #2 CH3OH
-{"nchan":"low", "restfreq": 12.14866 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #3 H81a
-{"nchan":"low", "restfreq": 12.16856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #4 CH3OH lo
+{"nchan":"low", "restfreq": 13165.96 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #1 H2C18O
+{"nchan":"low", "restfreq": 12511.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #2 CH3OH
+{"nchan":"low", "restfreq": 12148.66 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #3 H81a
+{"nchan":"low", "restfreq": 12168.56 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #4 CH3OH lo
 #{"nchan":"low", "restfreq": 12.17856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, # center of CH3OH
-{"nchan":"low", "restfreq": 12.18856 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #5 CH3OH hi
-{"nchan":"low", "restfreq": 12.60708 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #6 H80a
-{"nchan":"low", "restfreq": 13.08885 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #7 H79a
-{"nchan":"low", "restfreq": 13.04381 , 'bandwidth': 23.44, "res":5.7, "deltafreq": 0}, #8 SO
+{"nchan":"low", "restfreq": 12188.56 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #5 CH3OH hi
+{"nchan":"low", "restfreq": 12607.08 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #6 H80a
+{"nchan":"low", "restfreq": 13088.85 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #7 H79a
+{"nchan":"low", "restfreq": 13043.81 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, #8 SO
 # spw 3
-{"nchan":"high", "restfreq": 14.5 , 'bandwidth': 1500, "res":92, "deltafreq": 0},
+{"nchan":"high", "restfreq": 14500.0 , 'bandwidth': 1500, "res":0.092, "deltafreq": 0},
 # spw 4
-{"nchan":"high", "restfreq": 13.0 , 'bandwidth': 1500, "res":92, "deltafreq": 0},
+{"nchan":"high", "restfreq": 13000.0 , 'bandwidth': 1500, "res":0.092, "deltafreq": 0},
 ]
 
 #Configure(myconfig)

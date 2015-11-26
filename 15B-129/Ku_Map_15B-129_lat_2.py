@@ -12,7 +12,7 @@ Following pipeline recommendations:
 https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Reduction_Execute_Pipeline_with
 """
 
-Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
+#Break("Make sure you run ConfigureFocusKu.py before beginning this observation")
 
 cat = Catalog("/users/aginsbur/GBT15B-129/gc_15B-129.astrid")
 Configure("/users/aginsbur/GBT15B-129/H2CO_2cm_KUSetup_GC_15B-129.py")
