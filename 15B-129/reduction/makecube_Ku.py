@@ -11,16 +11,24 @@ np.seterr(all='ignore')
 
 scanranges = ([19,76], [77,134], [149,194], [196,242], [248,305], [306,352])
 sampler_feeds = {x: 1 if x in 'ABCD' else 2 for x in 'ABCDEFGH'}
+fntemplate = '15B_129_1_{0:d}to{1:d}_{2:s}_F{3:d}.fits'
 
 for cubename,restfreq,samplers,cunit3,ctype3 in (
-        #('CMZ_East_H113a_cube', 4.497776e9, ('D34','D38')),
-        #('CMZ_East_H110a_cube', 4.874157e9, ('D33','D37')),
-        ('CMZ_East_14.5_cube', 14.5e9, ['B1_0','B2_0','F2_0','F1_0'], 'Hz', 'FREQ'),
-        #('CMZ_East_H2C18O22_cube', 13.16596, ["B18","B22","D34","D38"]),
-        #('CMZ_East_H109a_cube', 5.008922e9, ('B18','B22')),
-        #('CMZ_East_H112a_cube', 4.61879e9, ('C26','C30')),
-        #('CMZ_East_OHF44_cube', 5.52344e9, ('A10','A14')),
-        #('CMZ_East_CH3NH2_cube', 5.19543e9, ('B21','B17'))
+        ('CMZ_East_CH3OH202313_cube',  12.17859e9,  ['A1_1', 'A2_1', 'E1_1',
+                                                     'E2_1', 'A1_2', 'A2_2',
+                                                     'E1_2', 'E2_2'], 'km/s',
+         'VRAD'),
+        ('CMZ_East_CH3OH514515_cube',  12.511e9,  ['E1_3', 'E2_3', 'A1_3',
+                                                   'A2_3'], 'km/s', 'VRAD'),
+        ('CMZ_East_SO1211_cube',   13.04381e9,  ['E1_5', 'E2_5', 'A1_5',
+                                                 'A2_5'], 'km/s', 'VRAD'),
+        ('CMZ_East_H213CO_cube',  13.7788e9,  ['D2_1', 'D2_2', 'H2_1', 'H2_2',
+                                               'D1_1', 'H1_1', 'D1_2', 'H1_2'],
+         'km/s', 'VRAD'),
+        ('CMZ_East_H2C18O_cube',  13.16596e9,  ['A1_7', 'A2_7', 'E1_7',
+                                                'E2_7'], 'km/s', 'VRAD'),
+        ('CMZ_East_13.0_cube', 13.0e9, ['C1_0','C2_0','G2_0','G1_0'], 'Hz', 'FREQ'),
+        ('CMZ_East_14.5_cube', 14.5e9, ['C1_0','C2_0','G2_0','G1_0'], 'Hz', 'FREQ'),
             ):
 
     cubename = os.path.join(outpath,cubename)
@@ -28,7 +36,7 @@ for cubename,restfreq,samplers,cunit3,ctype3 in (
     makecube.generate_header(0.466, -0.025, naxis1=200, naxis2=150, pixsize=15,
                              naxis3=15000, cd3=1e5, cunit3=cunit3, clobber=True,
                              ctype3=ctype3,
-                             crval3=restfreq,
+                             crval3=restfreq if ctype3=='FREQ' else 0.0,
                              output_flatheader=cubename+"flatheader.txt",
                              output_cubeheader=cubename+"cubeheader.txt",
                              restfreq=restfreq)
@@ -39,17 +47,19 @@ for cubename,restfreq,samplers,cunit3,ctype3 in (
 
     files = [x for scan1,scan2 in scanranges for x in
              [os.path.join(outpath,
-                           '15B_129_1_%ito%i_%s_F%i.fits' %
-                           (scan1, scan2, samplers[ii],
-                            sampler_feeds[samplers[ii][0]]))
+                           fntemplate.format(scan1, scan2, samplers[ii],
+                                             sampler_feeds[samplers[ii][0]]))
               for ii in xrange(len(samplers))]]
+
+    iterator = makecube.freq_iterator if ctype3 == 'FREQ' else makecube.velo_iterator
+
     for fn in files:
         makecube.add_file_to_cube(fn,
                                   cubename+'.fits',
                                   nhits=cubename+'_nhits.fits',
                                   add_with_kernel=True, 
                                   chmod=True,
-                                  velo_iterator=makecube.freq_iterator,
+                                  velo_iterator=iterator,
                                   kernel_fwhm=20./3600.,
                                   default_unit=u.Hz,
                                   progressbar=True,
@@ -57,54 +67,5 @@ for cubename,restfreq,samplers,cunit3,ctype3 in (
                                   cubeheader=cubename+"cubeheader.txt",
                                  )
 
-    #os.system('chmod +x %s_starlink.sh' % cubename)
-    #os.system('%s_starlink.sh' % cubename)
-    makecube.make_flats(cubename,vrange=[-20,60],noisevrange=[250,300])
-
-
-##import FITS_tools
-#import FITS_tools.cube_regrid
-#from astropy.io import fits
-### TODO: REPLACE WITH FITS_TOOLS!!
-##from agpy.cubes import smooth_cube
-#from FITS_tools.cube_regrid import spatial_smooth_cube
-#
-#for cubename in ('CMZ_East_H2CO22_cube', 'CMZ_East_H213CO22_cube', 'CMZ_East_H2C18O22_cube'):
-#
-#    cubename = os.path.join(outpath,cubename)
-#    cube = fits.open(cubename+"_sub.fits")
-#    # kernel = ((2.5*60)**2 -  50.**2)**0.5 / sqrt(8*log(2)) = 60 arcsec
-#    # 60 arcsec / 15 "/pixel = 4
-#    cubesm2 = FITS_tools.cube_regrid.gsmooth_cube(cube[0].data, [5,4,4], use_fft=True, psf_pad=False, fft_pad=False)
-#    cubesm = spatial_smooth_cube(cube[0].data, kernelwidth=4, interpolate_nan=True)
-#    cube[0].data = cubesm
-#    cube.writeto(cubename+"_sub_smoothtoCband.fits",clobber=True)
-#    cube[0].data = cubesm2
-#    cube.writeto(cubename+"_sub_smoothtoCband_vsmooth.fits",clobber=True)
-#
-#    #makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.886)
-#    #makecube.make_taucube(cubename,cubename+"_continuum.fits",etamb=0.886, suffix="_sub_smoothtoCband.fits")
-#    # -0.4 is the most negative point in the continuum map...
-#    makecube.make_taucube(cubename,
-#                          cubename+"_continuum.fits",
-#                          etamb=0.886,
-#                          tex=2.0,
-#                          suffix="_sub_smoothtoCband_vsmooth.fits",
-#                          outsuffix="_smoothtoCband_vsmooth.fits",
-#                          TCMB=2.7315+0.4)
-#
-#    makecube.make_taucube(cubename,
-#                          cubename+"_continuum.fits",
-#                          etamb=0.886,
-#                          tex=2.0,
-#                          suffix="_sub_smoothtoCband.fits",
-#                          outsuffix="_smoothtoCband.fits",
-#                          TCMB=2.7315+0.4)
-#
-#    makecube.make_taucube(cubename,
-#                          cubename+"_continuum.fits",
-#                          etamb=0.886,
-#                          tex=2.0,
-#                          suffix="_sub.fits",
-#                          outsuffix=".fits",
-#                          TCMB=2.7315+0.4)
+    if ctype3 == 'VRAD':
+        makecube.make_flats(cubename,vrange=[-20,80],noisevrange=[150,200])
