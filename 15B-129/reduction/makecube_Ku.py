@@ -1,5 +1,6 @@
 import os
 import astropy.io.fits as pyfits
+from astropy import units as u
 import itertools
 import sys
 from sdpy import makecube,make_off_template,calibrate_map_scans
