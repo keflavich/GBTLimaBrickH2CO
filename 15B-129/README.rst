@@ -33,6 +33,16 @@ Log in at least 30 minutes prior to observations
      followed by a nod to an off position.  Integration times are 0.5 seconds,
      so there should be 72 or 90 integrations per successful scan.
 
+Update for January 2016
+-----------------------
+
+This has been done:
+
+ * 2x CMZ_east_left DecLat
+ * 1.5x CMZ_east_right DecLat
+ * 1x CMZ_east_left RALong
+ * 1x CMZ_east_right RALong
+
 
 Important Links
 ~~~~~~~~~~~~~~~
