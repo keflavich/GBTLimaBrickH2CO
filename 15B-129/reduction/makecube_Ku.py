@@ -9,9 +9,10 @@ from paths import outpath
 # to ignore div-by-zero errors?
 np.seterr(all='ignore')
 
-scanranges = ([19,76], [77,134], [149,194], [196,242], [248,305], [306,352])
+scanranges = {1:([19,76], [77,134], [149,194], [196,242], [248,305], [306,352]),
+              2:([7,52], ) }
 sampler_feeds = {x: 1 if x in 'ABCD' else 2 for x in 'ABCDEFGH'}
-fntemplate = '15B_129_1_{0:d}to{1:d}_{2:s}_F{3:d}.fits'
+fntemplate = '15B_129_{obsrun}_{0:d}to{1:d}_{2:s}_F{3:d}.fits'
 
 for cubename,restfreq,samplers,cunit3,ctype3,naxis3,cdelt3 in (
         ('CMZ_East_CH3OH202313_cube',  12.17859e9,  ['A1_1', 'A2_1', 'E1_1',
@@ -48,11 +49,13 @@ for cubename,restfreq,samplers,cunit3,ctype3,naxis3,cdelt3 in (
                                cubeheader=cubename+"cubeheader.txt",
                                clobber=True)
 
-    files = [x for scan1,scan2 in scanranges for x in
+    files = [x for obsrun in scanranges for scan1,scan2 in scanranges[obsrun] for x in
              [os.path.join(outpath,
                            fntemplate.format(scan1, scan2, samplers[ii],
-                                             sampler_feeds[samplers[ii][0]]))
-              for ii in xrange(len(samplers))]]
+                                             sampler_feeds[samplers[ii][0]],
+                                             obsrun=obsrun))
+              for ii in range(len(samplers))
+             ]]
 
     iterator = makecube.freq_iterator if ctype3 == 'FREQ' else makecube.velo_iterator
 
