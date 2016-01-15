@@ -10,7 +10,8 @@ from paths import outpath
 np.seterr(all='ignore')
 
 scanranges = {1:([19,76], [77,134], [149,194], [196,242], [248,305], [306,352]),
-              2:([7,52], ) }
+              2:([7,52], [54,99], [106,162], [164,217], [227,272], [274,295])
+             }
 sampler_feeds = {x: 1 if x in 'ABCD' else 2 for x in 'ABCDEFGH'}
 fntemplate = '15B_129_{obsrun}_{0:d}to{1:d}_{2:s}_F{3:d}.fits'
 
