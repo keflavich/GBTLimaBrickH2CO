@@ -63,23 +63,9 @@ for ifnum in samplers:
         datapfits = filepyfits[1].data
         dataarr = datapfits.DATA
 
-        #gain_dict = calibrate_map_scans.compute_gains_highfreq(datapfits,
-        #                                                       feednum=feednum,
-        #                                                       sampler=sampler)
-        #gain_dict = {k:v for k,v in gain_dict.iteritems() if v[1] > 0}
-        #gaintimes = np.array(gain_dict.keys())
-        #gains = np.array([v[0] for v in gain_dict.values()])
-        #tsys = np.array([v[1] for v in gain_dict.values()])
-        #gainsOK = gains > 0
-        #gaintimes = gaintimes[gainsOK]
-        #gains = gains[gainsOK]
-        #gain = np.median(gains)
-        #datapfits['TSYS'] = np.median(tsys[gainsOK])
-
-
-        #for obsmode,refscans,scanrange in zip(('DecLatMap','RALongMap','DecLatMap'),([9,54],[62,98],[108,140]),([9,54],[62,98],[108,140])):
         for obsmode,refscans,scanrange,sourcename in zip(
-            ('RALongMap', ),
+            ('RALongMap', 'RALongMap', 'DecLatMap', 'DecLatMap', 'RALongMap',
+             'RALongMap',  ),
             ([6,11,16,21,26,31,36,41,46,51],
              [53,58,63,68,73,78,83,88,93,98],
              [105,110,115,120,125,130,135,140,145,150,155,160],
@@ -109,19 +95,6 @@ for ifnum in samplers:
                                     "AGBT15B_129_02_{0}_fd{1}_if{2}_sr{3}-{4}"
                                     .format(sampler,feednum,ifnum,s1,s2))
             log.info(savefile)
-
-            #if sampler in ('A1_0','A2_0'):
-            #    off_template,off_template_in = make_off_template.make_off(filename, scanrange=scanrange,
-            #            #exclude_velo=[-10,70], interp_vrange=[-150,250],
-            #            interp_polyorder=10, sampler=sampler, return_uninterp=True,
-            #            feednum=feednum,
-            #            percentile=50,
-            #            sourcename=sourcename,
-            #            savefile=savefile,
-            #            clobber=True,
-            #            #debug=True,
-            #            linefreq=constants.restfreq, # needed to get velo right...
-            #            extension=1, exclude_spectral_ends=10)
 
             outfn = os.path.join(outpath,
                                  '15B_129_2_%ito%i_%s_F%i.fits' % (s1,s2,sampler,feednum))
