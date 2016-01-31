@@ -9,10 +9,6 @@ https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Red
 cat = Catalog("/users/aginsbur/GBT15B-129/gc_15B-129.astrid")
 Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup_GC_15B-129.py")
 
-Configure(myconfig)
-Balance()
-
-
 Slew("CMZ_East")
 Balance()
 
