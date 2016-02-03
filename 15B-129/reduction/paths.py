@@ -14,6 +14,10 @@ AGBT15B_129_2_path = os.path.join(projpath, 'AGBT15B_129_02.raw.vegas/')
 AGBT15B_129_2_file = 'AGBT15B_129_02.raw.vegas.{0}.fits'
 AGBT15B_129_2_fullpath = os.path.join(AGBT15B_129_2_path, AGBT15B_129_2_file)
 
+AGBT15B_129_3_path = os.path.join(projpath, 'AGBT15B_129_03.raw.vegas/')
+AGBT15B_129_3_file = 'AGBT15B_129_03.raw.vegas.{0}.fits'
+AGBT15B_129_3_fullpath = os.path.join(AGBT15B_129_3_path, AGBT15B_129_3_file)
+
 outpath = os.path.join(projpath, 'reduced')
 
 #root = '/Users/adam/work/w51/2014_wband_h2co'
