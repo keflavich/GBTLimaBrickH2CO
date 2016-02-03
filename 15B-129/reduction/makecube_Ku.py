@@ -88,6 +88,7 @@ for cubename,restfreq,samplers,cunit3,ctype3,naxis3,cdelt3 in (
                                   kernel_fwhm=20./3600.,
                                   default_unit=u.Unit(cunit3),
                                   progressbar=True,
+                                  linefreq=restfreq,
                                   flatheader=cubename+"flatheader.txt",
                                   cubeheader=cubename+"cubeheader.txt",
                                  )
