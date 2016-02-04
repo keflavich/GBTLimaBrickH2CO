@@ -28,28 +28,28 @@ nchan     = "low" # 'low' uses mode 20, with 0.11 km/s channels
 vegas.vpol='self'
 restfreq  = [ 
 #{"nchan":"low", "restfreq": 4054.89 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h117a
-{"nchan":"low", "restfreq": 4745.365, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 6480.375, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
+{"nchan":"low", "restfreq": 4745.365, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h111a
+{"nchan":"low", "restfreq": 6480.375, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h100a
 {"nchan":"low", "restfreq": 4160.21 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h116a
 {"nchan":"low", "restfreq": 4829.66 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h2co: ifnum0
 {"nchan":"low", "restfreq": 6668.47 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # ch3ohmaser: ifnum17
-{"nchan":"low", "restfreq": 4269.205, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 4875.375, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 6677.74 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 4382.045, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 5005.32 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # ch3oh ifnum12
+{"nchan":"low", "restfreq": 4269.205, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h115a
+{"nchan":"low", "restfreq": 4875.375, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h110a
+{"nchan":"low", "restfreq": 6677.74 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h99a
+{"nchan":"low", "restfreq": 4382.045, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h114a
+{"nchan":"low", "restfreq": 5005.32 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # ch3oh ifnum12, also h109a?
 #{"nchan":"low", "restfreq": 6883.205, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
 {"nchan":"low", "restfreq": 4388.8  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h2c18o ifnum3
 {"nchan":"low", "restfreq": 5346.14 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # hdco ifnum14
 #{"nchan":"low", "restfreq": 7097.18 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 4498.9  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
+{"nchan":"low", "restfreq": 4498.9  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h113a
 #{"nchan":"low", "restfreq": 6096.07 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
 #{"nchan":"low", "restfreq": 7320.12 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
 {"nchan":"low", "restfreq": 4593.09 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h213co ifnum5
-{"nchan":"low", "restfreq": 4800.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 4850.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
+{"nchan":"low", "restfreq": 4800.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h2co-wide
+{"nchan":"low", "restfreq": 4850.0  , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h2co-wide
 #{"nchan":"low", "restfreq": 7552.495, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
-{"nchan":"low", "restfreq": 4619.94 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
+{"nchan":"low", "restfreq": 4619.94 , 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0}, # h112a
 #{"nchan":"low", "restfreq": 7794.815, 'bandwidth': 23.44, "res":0.0057, "deltafreq": 0},
 #{"nchan":"high", "restfreq": 4400.0 , 'bandwidth': 1080, "res":0.066, "deltafreq": 0},
 {"nchan":"high", "restfreq": 5200.0 , 'bandwidth': 1500, "res":0.092, "deltafreq": 0},
